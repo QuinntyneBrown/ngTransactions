@@ -1,0 +1,28 @@
+{
+  "compileOnSave": false,
+  "buildOnSave": false,
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "typeRoots": [ "node_modules/@types" ],
+    "types": [
+      "angular",
+      "angular-route",
+      "node"
+    ]
+  },
+  "filesGlob": [
+    "./src/**/*.ts",
+    "src/custom-typings.d.ts",
+    "typings/index.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
