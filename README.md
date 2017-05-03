@@ -15,6 +15,7 @@ This project framework provides the following features:
 - The app is a responsive single page application implementing a component based architecture by leveraging the latest api's of Anugular 1.6 and TypeScript (ES6)
 - The client is configurable. You can point the project to a different api by updating the configurationService.
 - TransactionService is a seperate project.
+- The service is documented using Swagger / Swashbuckle and can be found here http://transaction-service.azurewebsites.net/swagger
 - The service implements the CQRS (Command Query Responsiblity Segegration) Design Pattern
 - The logic for parsing the transaction line is in the Transaction model
 - Records that are not valid entries and ignored
