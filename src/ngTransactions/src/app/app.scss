@@ -1,5 +1,24 @@
-﻿body, html {
+﻿@import "../styles/base/all";
+
+body, html {
     font-family:sans-serif;
 }
 
+[ng-view] {
+    display:block;
+    margin: 0 20px;
+    max-width:1280px;
+}
+
+@media (min-width: $screen-md-min) { 
+    [ng-view] {
+        margin: 0 auto;
+    }
+}
+
 @import "shared/file-upload.component";
+@import "shared/header.component";
+
+@import "transactions/transaction-file-upload.component";
+@import "transactions/transaction.component";
+@import "transactions/transactions.component";

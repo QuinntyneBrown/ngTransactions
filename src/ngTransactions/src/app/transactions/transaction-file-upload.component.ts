@@ -1,7 +1,7 @@
 ﻿class TrasactionFileUploadComponent implements angular.IComponentController {
     constructor(public $window:angular.IWindowService) { }
 
-    public upload() {
+    public redirectToIndexUrl() {
         this.$window.location.href = "/";        
     }
 }

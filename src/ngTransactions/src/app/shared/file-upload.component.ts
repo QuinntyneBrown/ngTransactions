@@ -4,11 +4,8 @@ class FileUploadComponent implements angular.IComponentController {
         private $location: angular.ILocationService,
         private $scope: angular.IScope,
         private configurationService: IConfigurationService
-    ) {
-
-    }
-
-
+    ) { }
+    
     public $onInit() {
         
         let dropHTMLElement = this.$element[0].querySelector(".drop-zone") as HTMLElement;
@@ -18,7 +15,6 @@ class FileUploadComponent implements angular.IComponentController {
             dragEvent.preventDefault();
             angular.element(dragEvent.currentTarget).scope();
         }, false);
-
         
         dropHTMLElement.addEventListener("drop", (dragEvent: DragEvent) => {
             dragEvent.stopPropagation();

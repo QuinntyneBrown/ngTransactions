@@ -1,1 +1,27 @@
-﻿
+﻿ce-transactions {
+    text-transform:uppercase;
+
+    .search-container {
+        margin:0 0 20px 0;
+    }
+
+    .transaction {
+        line-height:1.6em;
+    }
+
+    .category,
+    .spend {
+        letter-spacing:0.025em;
+        text-transform:uppercase;
+    }
+    .category {
+        display:inline-block;
+        width:170px;
+    }
+
+    input {
+        width: calc(100% - 20px);
+        line-height:3em;
+        padding: 0 10px;
+    }
+}

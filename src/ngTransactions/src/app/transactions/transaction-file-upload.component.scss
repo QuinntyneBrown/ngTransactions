@@ -1,1 +1,13 @@
-﻿
+﻿ce-transaction-file-upload {
+    text-align:center;
+
+    ce-file-upload {
+        display:inline-block;
+        margin:0 auto;
+        width:100%;
+
+        .drop-zone {
+            margin: 0 auto;
+        }
+    }
+}

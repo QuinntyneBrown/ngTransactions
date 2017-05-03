@@ -112,6 +112,8 @@
     </Content>
     <Content Include="tsconfig.json" />
     <Content Include="package.json" />
+    <Content Include="src\styles\base\_all.scss" />
+    <Content Include="src\styles\base\_grid-settings.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
