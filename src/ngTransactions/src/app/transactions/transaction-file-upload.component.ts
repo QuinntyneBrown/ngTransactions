@@ -1,11 +1,13 @@
 ﻿class TrasactionFileUploadComponent implements angular.IComponentController {
-    constructor(transactionsService: ITransactionsService) {
-        
+    constructor(public $window:angular.IWindowService) { }
+
+    public upload() {
+        this.$window.location.href = "/";        
     }
 }
 
 angular.module("ngTransactionsApp.transactions")
     .component("ceTransactionFileUpload", {
         template: require("./transaction-file-upload.component.html"),
-        controller: ["transactionsService", TrasactionFileUploadComponent]
+        controller: ["$window",TrasactionFileUploadComponent]
     });

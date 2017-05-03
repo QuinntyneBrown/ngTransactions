@@ -1,23 +1,26 @@
 class FileUploadComponent implements angular.IComponentController {
     constructor(private $attrs: angular.IAttributes,
         private $element: angular.IAugmentedJQuery,
+        private $location: angular.ILocationService,
         private $scope: angular.IScope,
         private configurationService: IConfigurationService
     ) {
 
-        this.$onInit = this.$onInit.bind(this);
     }
 
+
     public $onInit() {
-        let drop = <any>this.$element.find(".drop-zone")[0];
-        drop.addEventListener("dragover", (dragEvent: DragEvent) => {
+        
+        let dropHTMLElement = this.$element[0].querySelector(".drop-zone") as HTMLElement;
+        
+        dropHTMLElement.addEventListener("dragover", (dragEvent: DragEvent) => {
             dragEvent.stopPropagation();
             dragEvent.preventDefault();
             angular.element(dragEvent.currentTarget).scope();
         }, false);
 
         
-        drop.addEventListener("drop", (dragEvent: DragEvent) => {
+        dropHTMLElement.addEventListener("drop", (dragEvent: DragEvent) => {
             dragEvent.stopPropagation();
             dragEvent.preventDefault();
             if (dragEvent.dataTransfer && dragEvent.dataTransfer.files) {
@@ -33,7 +36,8 @@ class FileUploadComponent implements angular.IComponentController {
                 xhr.open("POST", `${this.configurationService.baseUrl}api/transactions/upload`, true);
                 xhr.onload = (e) => {
                     if (xhr.readyState === 4) {
-                        if (xhr.status === 200) {
+                        if (xhr.status === 200) {                            
+                            (this as any).onUpload();
                         }
                         else {
                             console.error(xhr.statusText);
@@ -50,5 +54,8 @@ class FileUploadComponent implements angular.IComponentController {
 angular.module("ngTransactionsApp.shared")
     .component("ceFileUpload", {
         template: require("./file-upload.component.html"),
-        controller: ["$attrs", "$element", "$scope", "configurationService", FileUploadComponent]
+        bindings: {
+            onUpload: '&'
+        },
+        controller: ["$attrs", "$element", "$location","$scope", "configurationService", FileUploadComponent]
     });
