@@ -1,4 +1,5 @@
 ﻿const transactionsModule = angular.module("ngTransactionsApp.transactions", [
+    "ngTransactionsApp.configuration",
     "ngTransactionsApp.shared",
     "ngRoute"
 ]).config(function ($routeProvider: angular.route.IRouteProvider) {

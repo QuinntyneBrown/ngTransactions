@@ -1,2 +1,4 @@
 ﻿const sharedModule =
-    angular.module("ngTransactionsApp.shared", []);
+    angular.module("ngTransactionsApp.shared", [
+        "ngTransactionsApp.configuration"
+    ]);

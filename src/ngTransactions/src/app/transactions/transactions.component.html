@@ -1,5 +1,15 @@
 ﻿<div>
     <h1>Transactions</h1>
 
-
+    <div ng-repeat="transaction in $ctrl.transactions">
+        <span>
+            {{ transaction.date }}
+        </span>
+        <span>
+            {{ transaction.category }}
+        </span>
+        <span>
+            {{ transaction.spend }}
+        </span>
+    </div>
 </div>

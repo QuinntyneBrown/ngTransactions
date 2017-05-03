@@ -1,7 +1,9 @@
 class FileUploadComponent implements angular.IComponentController {
     constructor(private $attrs: angular.IAttributes,
         private $element: angular.IAugmentedJQuery,
-        private $scope: angular.IScope) {
+        private $scope: angular.IScope,
+        private configurationService: IConfigurationService
+    ) {
 
         this.$onInit = this.$onInit.bind(this);
     }
@@ -19,20 +21,19 @@ class FileUploadComponent implements angular.IComponentController {
             dragEvent.stopPropagation();
             dragEvent.preventDefault();
             if (dragEvent.dataTransfer && dragEvent.dataTransfer.files) {
-                var packageFiles = function (fileList: FileList) {
-                    var formData = new FormData();
-                    for (var i = 0; i < fileList.length; i++) {
+                let packageFiles = function (fileList: FileList) {
+                    let formData = new FormData();
+                    for (let i = 0; i < fileList.length; i++) {
                         formData.append(fileList[i].name, fileList[i]);
                     }
                     return formData;
                 }
 
-                var xhr = new XMLHttpRequest();
-                xhr.open("POST", "/api/fileupload/add", true);
+                let xhr = new XMLHttpRequest();
+                xhr.open("POST", `${this.configurationService.baseUrl}api/transactions/upload`, true);
                 xhr.onload = (e) => {
                     if (xhr.readyState === 4) {
                         if (xhr.status === 200) {
-                            //responseText = xhr.responseText;
                         }
                         else {
                             console.error(xhr.statusText);
@@ -49,5 +50,5 @@ class FileUploadComponent implements angular.IComponentController {
 angular.module("ngTransactionsApp.shared")
     .component("ceFileUpload", {
         template: require("./file-upload.component.html"),
-        controller: ["$attrs", "$element", "$scope", FileUploadComponent]
+        controller: ["$attrs", "$element", "$scope", "configurationService", FileUploadComponent]
     });

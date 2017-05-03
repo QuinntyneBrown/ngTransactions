@@ -12,6 +12,7 @@ import "./app/shared/file-upload.component";
 
 import "./app/transactions/transactions.module";
 import "./app/transactions/transaction-file-upload.component";
+import "./app/transactions/transaction.component";
 import "./app/transactions/transactions.component";
 import "./app/transactions/transactions.service";
 

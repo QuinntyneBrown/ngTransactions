@@ -1,13 +1,10 @@
 ﻿class TransactionsComponent implements angular.IComponentController {
-    constructor(public transactionService: ITransactionsService) {
+    constructor(public transactionService: ITransactionsService) { }    
 
-    }    
-
-    public $onInit() {
-        //alert("?");
-        //this.transactionService.get().then((results) => {
-        //    this.transactions = results;
-        //});
+    public $onInit() {        
+        this.transactionService.get().then((results) => {            
+            this.transactions = results;
+        });
     }
 
     public transactions: any = [];

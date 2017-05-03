@@ -12,12 +12,12 @@ class TransactionsService implements ITransactionsService {
 
     public get(): angular.IPromise<Array<Transaction>> {
         var deferred = this.$q.defer();
-        this.$http({ method: "GET", url: `${this.configurationService.baseUrl}/api/transactions/get` }).then((response) => {
-            return deferred.resolve(response);
+        this.$http({ method: "GET", url: `${this.configurationService.baseUrl}api/transactions/get` }).then((response:any) => {
+            return deferred.resolve(response.data.transactions);
         });
         return deferred.promise;
     }
 }
 
 angular.module("ngTransactionsApp.transactions")
-    .service("transactionsService", ["$http","$q",TransactionsService]);
+    .service("transactionsService", ["$http", "$q","configurationService",TransactionsService]);
