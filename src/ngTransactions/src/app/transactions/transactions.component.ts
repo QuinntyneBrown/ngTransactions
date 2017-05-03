@@ -8,6 +8,8 @@
     }
 
     public transactions: any = [];
+
+    public searchInput: string = "";
 }
 
 angular.module("ngTransactionsApp.transactions")

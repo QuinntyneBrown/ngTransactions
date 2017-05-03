@@ -7,5 +7,5 @@ class TransactionComponent implements angular.IComponentController {
 angular.module("ngTransactionsApp.transactions")
     .component("ceTransaction", {
         template: require("./transaction.component.html"),
-        controller: [TransactionsComponent]
+        controller: [TransactionComponent]
     });
