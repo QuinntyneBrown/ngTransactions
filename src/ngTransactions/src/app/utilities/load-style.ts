@@ -1,6 +1,6 @@
 ﻿export const loadStyle = (css, selector) => {
     function addStyleTagToHead() {
-        var style = document.createElement("style");
+        let style = document.createElement("style");
         style.setAttribute("data-selector", selector)
         style.appendChild(document.createTextNode(css));
         document.head.appendChild(style);
@@ -15,7 +15,6 @@
         addStyleTagToHead();
     }
     else {
-
         window.addEventListener("DOMContentLoaded", onDocumentLoad);
     }
 }

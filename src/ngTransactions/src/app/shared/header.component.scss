@@ -2,18 +2,21 @@
 
 ce-header {
     display:block;
+    height:60px;
+    background-color:rgb(89,89,89);
     
     a {
         cursor:pointer;
         text-decoration:none;
-        color:#000;
+        color:#fff;
         margin: 0 10px;
         text-transform:uppercase;
+        line-height:60px;
     }
 
     .container {
         margin: 0 20px;
-        max-width:1280px;
+        max-width:580px;
         text-align:center;
     }
 

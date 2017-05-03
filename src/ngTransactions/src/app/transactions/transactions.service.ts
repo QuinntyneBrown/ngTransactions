@@ -6,9 +6,7 @@ class TransactionsService implements ITransactionsService {
     constructor(public $http: angular.IHttpService,
         public $q: angular.IQService,
         public configurationService: IConfigurationService
-    ) {
-
-    }
+    ) { }
 
     public get(): angular.IPromise<Array<Transaction>> {
         var deferred = this.$q.defer();

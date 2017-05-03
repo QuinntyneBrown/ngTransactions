@@ -98,12 +98,6 @@
     <Content Include="src\app\transactions\transaction-file-upload.component.scss">
       <DependentUpon>transaction-file-upload.component.ts</DependentUpon>
     </Content>
-    <Content Include="src\app\transactions\transaction.component.html">
-      <DependentUpon>transaction.component.ts</DependentUpon>
-    </Content>
-    <Content Include="src\app\transactions\transaction.component.scss">
-      <DependentUpon>transaction.component.ts</DependentUpon>
-    </Content>
     <Content Include="src\app\transactions\transactions.component.html">
       <DependentUpon>transactions.component.ts</DependentUpon>
     </Content>
@@ -142,7 +136,6 @@
     <TypeScriptCompile Include="src\main.ts" />
     <TypeScriptCompile Include="src\app\shared\header.component.ts" />
     <TypeScriptCompile Include="src\app\shared\file-upload.component.ts" />
-    <TypeScriptCompile Include="src\app\transactions\transaction.component.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
