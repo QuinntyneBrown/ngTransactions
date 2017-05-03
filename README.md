@@ -4,10 +4,7 @@ Simple Angular 1.6 App using Webpack and TypeScript 2.x.
 
 ## Table Of Contents
 - [Features](#Features)
-- [Requirements](#Requirements)
-- [Installation](#Installation)
-- [Usage](#Usage)
-- [Demo](#Demo)
+- [QuickStart](#QuickStart)
 
 ## Features
 
