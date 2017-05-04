@@ -153,8 +153,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Content Include="dist\app.js" />
     <Content Include="index.html" />
     <Content Include="packages.config" />
+    <None Include="dist\app.js.map" />
     <None Include="Properties\PublishProfiles\transaction-service - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\transaction-service - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">

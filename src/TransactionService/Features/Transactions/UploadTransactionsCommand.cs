@@ -51,22 +51,8 @@ namespace TransactionService.Features.Transactions
                     batch.Transactions.Clear();
 
                     var stream = await file.ReadAsStreamAsync();
-                    
-                    using (var streamReader = new StreamReader(stream))
-                    {                        
-                        string line;
-                        var isFirstLine = true;
-                        while ((line = streamReader.ReadLine()) != null)
-                        {
-                            if (!isFirstLine)
-                            {
-                                var transaction = Transaction.FromTransactionFileLine(line);
-                                if(transaction != null)
-                                    batch.Transactions.Add(transaction);
-                            }
-                            isFirstLine = false;
-                        }
-                    }                
+
+                    batch.ImportTransactionsFromStream(stream);                
                 }
 
                 await _transactionServiceContext.SaveChangesAsync();

@@ -2,7 +2,7 @@
     "ngTransactionsApp.configuration",
     "ngTransactionsApp.shared",
     "ngRoute"
-]).config(function ($routeProvider: angular.route.IRouteProvider) {
+]).config(["$routeProvider", ($routeProvider: angular.route.IRouteProvider) => {
     $routeProvider
         .when("/",
         {
@@ -12,4 +12,4 @@
         {
             template: "<ce-transaction-file-upload></ce-transaction-file-upload>"
         });
-});
+}]);

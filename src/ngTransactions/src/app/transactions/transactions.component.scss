@@ -15,17 +15,23 @@
 
     .category,
     .spend {
+        display:inline-block;
         letter-spacing:0.025em;
         text-transform:uppercase;
+        text-align:right;
+        width:100px;
     }
-    .category {
-        display:inline-block;
-        width:170px;
+    .category {        
+        width:calc(100% - 105px);
+        text-align:left;
     }
 
     input {
         width: calc(100% - 20px);
         line-height:3em;
         padding: 0 10px;
+        border-radius: 0;
+        -webkit-appearance: none;
+        border:solid 1px #ddd;        
     }
 }

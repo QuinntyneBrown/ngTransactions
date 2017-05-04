@@ -3,3 +3,12 @@
     date: Date;
     category: string;
 }
+
+declare interface GetSummaryResponseData {
+    "transactionSummaryItems": [
+        {
+            "category": "string",
+            "spend": "string"
+        }
+    ]
+}

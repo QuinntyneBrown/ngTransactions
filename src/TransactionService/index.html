@@ -1,8 +1,8 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Transaction Service</title>
-	<meta charset="utf-8" />
+    <title>AngularJS Transactions App</title>
+    <meta charset="utf-8" />
     <base href="/">
     <meta name="viewport"
           content="user-scalable=no,
@@ -14,7 +14,9 @@
               target-densitydpi=device-dpi" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
 </head>
-<body>
-    <h1>Transaction Service</h1>
+<body ng-app="ngTransactionsApp">
+    <ce-header></ce-header>
+    <div ng-view></div>
+    <script src="dist/app.js?v=7"></script>
 </body>
 </html>

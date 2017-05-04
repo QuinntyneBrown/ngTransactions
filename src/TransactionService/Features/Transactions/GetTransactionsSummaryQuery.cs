@@ -1,11 +1,9 @@
 using MediatR;
-using TransactionService.Data;
-
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
 using System.Data.Entity;
+using TransactionService.Data;
 
 namespace TransactionService.Features.Transactions
 {
@@ -20,39 +18,29 @@ namespace TransactionService.Features.Transactions
 
         public class GetTransactionsSummaryHandler : IAsyncRequestHandler<GetTransactionsSummaryRequest, GetTransactionsSummaryResponse>
         {
-            public GetTransactionsSummaryHandler(TransactionServiceContext transactionServiceContext)
+            public GetTransactionsSummaryHandler(TransactionServiceContext context)
             {
-                _transactionServiceContext = transactionServiceContext;
+                _context = context;
             }
 
             public async Task<GetTransactionsSummaryResponse> Handle(GetTransactionsSummaryRequest request)
-            {
-                var transactionSummaryItems = new List<TransactionSummaryItemApiModel>();
-
-                var transactions = _transactionServiceContext
+                => new GetTransactionsSummaryResponse()
+                {
+                    TransactionSummaryItems = _context
                     .Batches
                     .Include(x => x.Transactions)
                     .SelectMany(x => x.Transactions)
                     .GroupBy(x => x.Category)
-                    .ToDictionary(r => r.Key,r => r.Sum(x => x.Spend));
-
-                foreach (var transaction in transactions) {
-                    transactionSummaryItems.Add(new TransactionSummaryItemApiModel()
+                    .ToDictionary(r => r.Key, r => r.Sum(x => x.Spend))
+                    .Select(x => new TransactionSummaryItemApiModel()
                     {
-                        Category = transaction.Key,
-                        Spend = transaction.Value.ToString("C")
-                    });
-                }
-
-                return new GetTransactionsSummaryResponse()
-                {
-                    TransactionSummaryItems = transactionSummaryItems
+                        Category = x.Key,
+                        Spend = x.Value.ToString("C")
+                    })
+                    .ToList()
                 };
-            }
 
-            private readonly TransactionServiceContext _transactionServiceContext;
+            private readonly TransactionServiceContext _context;
         }
-
     }
-
 }

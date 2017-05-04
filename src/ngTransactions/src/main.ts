@@ -1,7 +1,7 @@
 ﻿import { loadStyle } from "./app/utilities/load-style";
 
 import "angular/angular.js";
-import "angular-route/angular-route.js";
+import "angular-route/angular-route.min.js";
 
 import "./app/configuration/configuration.module";
 import "./app/configuration/configuration.service";

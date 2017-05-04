@@ -10,7 +10,7 @@ class TransactionsService implements ITransactionsService {
 
     public get(): angular.IPromise<Array<Transaction>> {
         var deferred = this.$q.defer();
-        this.$http({ method: "GET", url: `${this.configurationService.baseUrl}api/transactions/getsummary` }).then((response:any) => {
+        this.$http({ method: "GET", url: `${this.configurationService.baseUrl}api/transactions/getsummary` }).then((response: { data: GetSummaryResponseData }) => {
             return deferred.resolve(response.data.transactionSummaryItems);
         });
         return deferred.promise;

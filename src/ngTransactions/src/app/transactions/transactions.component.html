@@ -1,5 +1,5 @@
 ﻿<div>
-    <h1>Transactions</h1>
+    <h1>Spend</h1>
 
     <div class="search-container">
         <input type="text" ng-model="$ctrl.searchInput" placeholder="Search by category">
@@ -7,10 +7,10 @@
     
     <div ng-repeat="transaction in $ctrl.transactions | filter:$ctrl.searchInput" class="transaction">
         <span class="category">
-            {{ transaction.category }}
+            {{ ::transaction.category }}
         </span>
         <span  class="spend">
-            {{ transaction.spend }}
+            {{ ::transaction.spend }}
         </span>
     </div>
 </div>
