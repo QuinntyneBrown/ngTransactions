@@ -3,7 +3,7 @@
 ce-header {
     display:block;
     height:60px;
-    //background-color:rgb(89,89,89);
+
     background: linear-gradient(90deg, rgb(89,89,89) 0%, rgb(200,200,200) 100%);
     
     a {
@@ -16,6 +16,11 @@ ce-header {
         display:inline-block;        
     }
 
+    a.active {
+        background: linear-gradient(90deg, rgb(89,89,89) 0%, rgb(125,125,125) 100%);
+        font-weight:600;
+    }
+
     a:hover {
         background-color:#666;
     }
@@ -24,6 +29,7 @@ ce-header {
         margin: 0 20px;
         max-width:580px;
         text-align:center;
+        padding:0;
     }
 
     @media (min-width: $screen-md-min) { 

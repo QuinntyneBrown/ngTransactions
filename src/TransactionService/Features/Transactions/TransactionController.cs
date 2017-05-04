@@ -3,12 +3,12 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Description;
 using TransactionService.Features.Transactions.UploadHandlers;
 
 using static TransactionService.Features.Transactions.UploadTransactionsCommand;
 using static TransactionService.Features.Transactions.GetTransactionsQuery;
 using static TransactionService.Features.Transactions.GetTransactionsSummaryQuery;
-using System.Web.Http.Description;
 
 namespace TransactionService.Features.Transactions
 {

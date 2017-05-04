@@ -8,7 +8,7 @@
         {
             template: "<ce-transactions></ce-transactions>"
         })
-        .when("/transactions/fileupload",
+        .when("/upload",
         {
             template: "<ce-transaction-file-upload></ce-transaction-file-upload>"
         });

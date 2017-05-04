@@ -156,7 +156,6 @@
     <Content Include="dist\app.js" />
     <Content Include="index.html" />
     <Content Include="packages.config" />
-    <None Include="dist\app.js.map" />
     <None Include="Properties\PublishProfiles\transaction-service - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\transaction-service - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
@@ -185,7 +184,9 @@
     <Compile Include="Features\Transactions\GetTransactionsSummaryQuery.cs" />
     <Compile Include="Features\Transactions\TransactionSummaryItemApiModel.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="dist\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

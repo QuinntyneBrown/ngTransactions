@@ -1,8 +1,6 @@
 using MediatR;
-using System;
 using System.Collections.Generic;
 using System.Data.Entity;
-using System.Globalization;
 using System.IO;
 using System.Threading.Tasks;
 using TransactionService.Data;

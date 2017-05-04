@@ -6,14 +6,14 @@ body, html {
     padding:0;
 }
 
-[ng-view] {
+ng-view {
     display:block;
     margin: 0 20px;
     max-width:580px;
 }
 
 @media (min-width: $screen-md-min) { 
-    [ng-view] {
+    ng-view {
         margin: 0 auto;
     }
 }

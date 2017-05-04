@@ -18,3 +18,7 @@ import "./app/transactions/transactions.service";
 import "./app/app.module";
 
 loadStyle(require("./app/app.scss"), "ngTransactionsApp");
+
+declare var angular;
+
+angular.bootstrap(document.body, ["ngTransactionsApp"]);
