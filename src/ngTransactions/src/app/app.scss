@@ -12,7 +12,7 @@ ng-view {
     max-width:580px;
 }
 
-@media (min-width: $screen-md-min) { 
+@media (min-width: $screen-sm-min) { 
     ng-view {
         margin: 0 auto;
     }

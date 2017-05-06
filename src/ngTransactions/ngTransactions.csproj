@@ -124,8 +124,6 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="src\app\configuration\configuration.module.ts" />
-    <TypeScriptCompile Include="src\app\configuration\configuration.service.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
     <TypeScriptCompile Include="src\app\shared\shared.module.ts" />
     <TypeScriptCompile Include="src\app\transactions\transaction-file-upload.component.ts" />

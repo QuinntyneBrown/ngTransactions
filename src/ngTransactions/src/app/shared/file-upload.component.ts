@@ -1,7 +1,5 @@
 class FileUploadComponent implements angular.IComponentController {
-    constructor(private $attrs: angular.IAttributes,
-        private $element: angular.IAugmentedJQuery,
-        private configurationService: IConfigurationService
+    constructor(private $element: angular.IAugmentedJQuery, private BASE_URL: string
     ) { }
     
     public $onInit() {
@@ -11,7 +9,6 @@ class FileUploadComponent implements angular.IComponentController {
         dropZoneHTMLElement.addEventListener("dragover", (dragEvent: DragEvent) => {
             dragEvent.stopPropagation();
             dragEvent.preventDefault();
-            angular.element(dragEvent.currentTarget).scope();
         }, false);
         
         dropZoneHTMLElement.addEventListener("drop", (dragEvent: DragEvent) => {
@@ -27,7 +24,7 @@ class FileUploadComponent implements angular.IComponentController {
                 }
 
                 let xhr = new XMLHttpRequest();
-                xhr.open("POST", `${this.configurationService.baseUrl}api/transactions/upload`, true);
+                xhr.open("POST", `${this.BASE_URL}api/transactions/upload`, true);
                 xhr.onload = (e) => {
                     if (xhr.readyState === 4) {
                         if (xhr.status === 200) {                            
@@ -51,5 +48,5 @@ angular.module("ngTransactionsApp.shared")
         bindings: {
             onUpload: '&'
         },
-        controller: ["$attrs", "$element", "configurationService", FileUploadComponent]
+        controller: ["$element", "BASE_URL", FileUploadComponent]
     });

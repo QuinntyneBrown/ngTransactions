@@ -2,7 +2,7 @@
     <h1>Spend</h1>
 
     <div class="search-container">
-        <input type="text" ng-model="$ctrl.searchInput" placeholder="Search by category">
+        <input type="text" ng-model="$ctrl.searchInput" placeholder="Filter by category">
     </div>
     
     <div ng-repeat="transaction in $ctrl.transactions | filter:$ctrl.searchInput" class="transaction">
