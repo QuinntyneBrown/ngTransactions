@@ -1,5 +1,4 @@
 using MediatR;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
 using System.Data.Entity;
@@ -13,7 +12,7 @@ namespace TransactionService.Features.Transactions
 
         public class GetTransactionsSummaryResponse
         {
-            public ICollection<TransactionSummaryItemApiModel> TransactionSummaryItems { get; set; } = new HashSet<TransactionSummaryItemApiModel>();
+            public dynamic TransactionSummaryItems { get; set; }
         }
 
         public class GetTransactionsSummaryHandler : IAsyncRequestHandler<GetTransactionsSummaryRequest, GetTransactionsSummaryResponse>
@@ -32,7 +31,7 @@ namespace TransactionService.Features.Transactions
                     .SelectMany(x => x.Transactions)
                     .GroupBy(x => x.Category)
                     .ToDictionary(r => r.Key, r => r.Sum(x => x.Spend))
-                    .Select(x => new TransactionSummaryItemApiModel()
+                    .Select(x => new
                     {
                         Category = x.Key,
                         Spend = x.Value.ToString("C")

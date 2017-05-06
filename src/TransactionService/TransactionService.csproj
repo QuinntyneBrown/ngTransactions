@@ -180,7 +180,6 @@
     <Compile Include="Data\Model\Transaction.cs" />
     <Compile Include="Data\Model\Batch.cs" />
     <Compile Include="Features\Transactions\GetTransactionsSummaryQuery.cs" />
-    <Compile Include="Features\Transactions\TransactionSummaryItemApiModel.cs" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
