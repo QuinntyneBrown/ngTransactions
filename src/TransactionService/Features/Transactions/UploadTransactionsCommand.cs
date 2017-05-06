@@ -16,10 +16,7 @@ namespace TransactionService.Features.Transactions
             public InMemoryMultipartFormDataStreamProvider Provider { get; set; }
         }
 
-        public class UploadTransactionsResponse
-        {
-            public ICollection<TransactionApiModel> Transactions { get; set; } = new HashSet<TransactionApiModel>();
-        }
+        public class UploadTransactionsResponse { }
 
         public class UploadTransactionsHandler : IAsyncRequestHandler<UploadTransactionsRequest, UploadTransactionsResponse>
         {
@@ -29,9 +26,7 @@ namespace TransactionService.Features.Transactions
             }
 
             public async Task<UploadTransactionsResponse> Handle(UploadTransactionsRequest request)
-            {
-                var response = new UploadTransactionsResponse();
-
+            {                
                 foreach (var file in request.Provider.Files)
                 {                    
                     var filename = new FileInfo(file.Headers.ContentDisposition.FileName.Trim(new char[] { '"' })
@@ -54,12 +49,10 @@ namespace TransactionService.Features.Transactions
                 }
 
                 await _transactionServiceContext.SaveChangesAsync();
-                return response;
+                return new UploadTransactionsResponse();
             }
 
             protected readonly ITransactionServiceContext _transactionServiceContext;
         }
-
     }
-
 }

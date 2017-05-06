@@ -7,7 +7,6 @@ using System.Web.Http.Description;
 using TransactionService.Features.Transactions.UploadHandlers;
 
 using static TransactionService.Features.Transactions.UploadTransactionsCommand;
-using static TransactionService.Features.Transactions.GetTransactionsQuery;
 using static TransactionService.Features.Transactions.GetTransactionsSummaryQuery;
 
 namespace TransactionService.Features.Transactions
@@ -31,12 +30,6 @@ namespace TransactionService.Features.Transactions
 
             return Ok(await _mediator.Send(new UploadTransactionsRequest() { Provider = provider }));            
         }
-
-        [Route("get")]
-        [HttpGet]
-        [ResponseType(typeof(GetTransactionsResponse))]
-        public async Task<IHttpActionResult> Get()
-            => Ok(await _mediator.Send(new GetTransactionsRequest()));
 
         [Route("getSummary")]
         [HttpGet]
