@@ -12,7 +12,7 @@ namespace TransactionService.Data.Model
         
 		public float Spend { get; set; }
 
-        public static Transaction FromTransactionFileLine(string line) {
+        public static Transaction FromCSVFileLine(string line) {
             var transaction = new Transaction();
             var parts = line.Split(',');
 

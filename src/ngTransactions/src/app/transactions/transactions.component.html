@@ -1,16 +1,14 @@
-﻿<div>
-    <h1>Spend</h1>
+﻿<h1>Spend</h1>
 
-    <div class="search-container">
-        <input type="text" ng-model="$ctrl.searchInput" placeholder="Filter by category">
-    </div>
+<div class="filter-container">
+    <input type="text" ng-model="$ctrl.filterInput" placeholder="Filter by category">
+</div>
     
-    <div ng-repeat="transaction in $ctrl.transactions | filter:$ctrl.searchInput" class="transaction">
-        <span class="category">
-            {{ ::transaction.category }}
-        </span>
-        <span  class="spend">
-            {{ ::transaction.spend }}
-        </span>
-    </div>
+<div ng-repeat="transaction in $ctrl.transactions | filter: { category: $ctrl.filterInput }" class="transaction">
+    <span class="category">
+        {{ ::transaction.category }}
+    </span>
+    <span  class="spend">
+        {{ ::transaction.spend }}
+    </span>
 </div>

@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using System.Linq;
 using System.Data.Entity;
 using TransactionService.Data;
+using System.Collections.Generic;
 
 namespace TransactionService.Features.Transactions
 {
@@ -12,7 +13,7 @@ namespace TransactionService.Features.Transactions
 
         public class GetTransactionsSummaryResponse
         {
-            public dynamic TransactionSummaryItems { get; set; }
+            public ICollection<TransactionSummaryApiModel> TransactionSummaryItems { get; set; }
         }
 
         public class GetTransactionsSummaryHandler : IAsyncRequestHandler<GetTransactionsSummaryRequest, GetTransactionsSummaryResponse>
@@ -31,7 +32,7 @@ namespace TransactionService.Features.Transactions
                     .SelectMany(x => x.Transactions)
                     .GroupBy(x => x.Category)
                     .ToDictionary(r => r.Key, r => r.Sum(x => x.Spend))
-                    .Select(x => new
+                    .Select(x => new TransactionSummaryApiModel()
                     {
                         Category = x.Key,
                         Spend = x.Value.ToString("C")

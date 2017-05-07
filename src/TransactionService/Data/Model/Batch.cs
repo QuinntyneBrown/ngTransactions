@@ -17,11 +17,12 @@ namespace TransactionService.Data.Model
             {
                 string line;
                 var isFirstLine = true;
+                Transactions.Clear();
                 while ((line = streamReader.ReadLine()) != null)
                 {
                     if (!isFirstLine)
                     {
-                        var transaction = Transaction.FromTransactionFileLine(line);
+                        var transaction = Transaction.FromCSVFileLine(line);
                         if (transaction != null)
                             Transactions.Add(transaction);
                     }

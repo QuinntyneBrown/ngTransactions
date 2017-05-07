@@ -180,8 +180,8 @@
     <Compile Include="Data\Model\Transaction.cs" />
     <Compile Include="Data\Model\Batch.cs" />
     <Compile Include="Features\Transactions\GetTransactionsSummaryQuery.cs" />
+    <Compile Include="Features\Transactions\TransactionSummaryApiModel.cs" />
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

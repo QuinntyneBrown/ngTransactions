@@ -1,5 +1,4 @@
 using MediatR;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.IO;
 using System.Threading.Tasks;
@@ -40,15 +39,12 @@ namespace TransactionService.Features.Transactions
                         batch = new Batch() { Filename = filename };
                         _transactionServiceContext.Batches.Add(batch);
                     }
-
-                    batch.Transactions.Clear();
-
-                    var stream = await file.ReadAsStreamAsync();
-
-                    batch.ImportTransactionsFromStream(stream);                
+                    
+                    batch.ImportTransactionsFromStream(await file.ReadAsStreamAsync());                
                 }
 
                 await _transactionServiceContext.SaveChangesAsync();
+
                 return new UploadTransactionsResponse();
             }
 

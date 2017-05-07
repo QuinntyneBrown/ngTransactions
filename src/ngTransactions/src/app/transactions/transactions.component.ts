@@ -7,9 +7,9 @@
         });
     }
 
-    public transactions: any = [];
+    public transactions: Array<Transaction> = [];
 
-    public searchInput: string = "";
+    public filterInput: string = "";
 }
 
 angular.module("ngTransactionsApp.transactions")
