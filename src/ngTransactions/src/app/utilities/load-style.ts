@@ -1,4 +1,6 @@
-﻿export const loadStyle = (css, selector) => {
+﻿declare interface LoadStyle { (css, selector): void };
+
+const loadStyle: LoadStyle = (css, selector) => {
     function addStyleTagToHead() {
         let style = document.createElement("style");
         style.setAttribute("data-selector", selector)
@@ -18,3 +20,7 @@
         window.addEventListener("DOMContentLoaded", onDocumentLoad);
     }
 }
+
+angular.module("ngTransactionsApp.utilities")
+    .value("loadStyle", loadStyle);
+

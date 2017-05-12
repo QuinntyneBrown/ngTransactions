@@ -12,7 +12,9 @@
     "typeRoots": [ "node_modules/@types" ],
     "types": [
       "angular",
-      "angular-route",      
+      "angular-mocks",
+      "angular-route", 
+      "jasmine",     
       "node"
     ]
   },

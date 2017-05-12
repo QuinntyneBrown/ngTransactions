@@ -1,7 +1,9 @@
 ﻿import * as angular from 'angular';
 import "angular-route/angular-route.min.js";
 
-import { loadStyle } from "./app/utilities/load-style";
+import "./app/utilities/utilities.module";
+import "./app/utilities/create-xhr";
+import "./app/utilities/load-style";
 
 import "./app/shared/shared.module";
 import "./app/shared/header.component";
@@ -13,7 +15,5 @@ import "./app/transactions/transactions.component";
 import "./app/transactions/transactions.service";
 
 import "./app/app.module";
-
-loadStyle(require("./app/app.scss"), "ngTransactionsApp");
 
 angular.bootstrap(document.body, ["ngTransactionsApp"]);

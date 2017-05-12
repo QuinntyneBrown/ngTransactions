@@ -5,7 +5,8 @@ const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 module.exports = {
     devtool: 'source-map',
     entry: {
-        'app': './src/main'
+        'app': './src/main',
+        'tests': './src/tests'
     },
     output: {
         path: __dirname + "/dist",
