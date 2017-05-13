@@ -5,9 +5,7 @@
     let template: string;
     let element: angular.IAugmentedJQuery;
 
-    beforeEach(() => {
-        angular.mock.module("ngTransactionsApp.shared");
-    });
+    beforeEach(() => angular.mock.module("ngTransactionsApp.shared"));
 
     beforeEach(inject(["$compile", "$rootScope", (_$compile_: angular.ICompileService, _$rootScope_: angular.IRootScopeService) => {
         $rootScope = _$rootScope_;

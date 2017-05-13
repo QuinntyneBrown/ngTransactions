@@ -1,5 +1,5 @@
-﻿//https://github.com/berniegp/mock-xmlhttprequest
-//https://github.com/jameslnewell/xhr-mock
+﻿import * as angular from 'angular';
+import { createMockXHR } from "../utilities/create-mock-xhr";
 
 describe("file upload component", () => {
 
@@ -13,7 +13,7 @@ describe("file upload component", () => {
 
         angular.mock.module(["$provide", ($provide: angular.auto.IProvideService) => {
             $provide.value("BASE_URL", "");
-            $provide.value("createXHR", () => new MockXMLHttpRequest());
+            $provide.value("createXHR", createMockXHR);
         }]);  
     });
 
@@ -27,26 +27,23 @@ describe("file upload component", () => {
         element = $compile(template)($rootScope.$new());        
         expect(element).toBeDefined();
     });
+    
+
+    it("should stop propagation and prevent default in the event of drag over", () => {
+        template = "<ce-file-upload></ce-file-upload>";
+        let stopPropagationCalled = false;
+        let preventDefaultCalled = false;
+        let dropZoneElement = element[0].querySelector(".drop-zone");
+        let dragOverEvent = new Event('dragover');
+
+        dragOverEvent.stopPropagation = () => stopPropagationCalled = true;
+        dragOverEvent.preventDefault = () => preventDefaultCalled = true;
+
+        element = $compile(template)($rootScope.$new());
+
+        dropZoneElement.dispatchEvent(dragOverEvent);
+
+        expect(preventDefaultCalled).toBeTruthy();
+        expect(stopPropagationCalled).toBeTruthy();
+    });
 });
-
-
-class MockXMLHttpRequest {
-
-    constructor() {
-
-    }
-
-    public onreadystatechange: (this: XMLHttpRequest, ev: Event) => {
-
-    }
-
-    public open(method: string, url: string, async?: boolean, user?: string, password?: string) {
-
-    }
-
-    public send(data?: any) {
-
-    }
-
-    public addEventListener<K extends keyof XMLHttpRequestEventMap>(type: K, listener: (this: XMLHttpRequest, ev: XMLHttpRequestEventMap[K]) => any, useCapture?: boolean) { }
-}
