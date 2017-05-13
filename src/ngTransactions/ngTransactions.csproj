@@ -152,6 +152,10 @@
     <TypeScriptCompile Include="src\app\transactions\transactions.component.ts" />
     <TypeScriptCompile Include="src\app\transactions\transactions.module.ts" />
     <TypeScriptCompile Include="src\app\transactions\transactions.service.ts" />
+    <TypeScriptCompile Include="src\app\utilities\create-mock-xhr.ts">
+      <SubType>Code</SubType>
+      <DependentUpon>create-xhr.ts</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\utilities\create-xhr.ts" />
     <TypeScriptCompile Include="src\app\utilities\load-style.ts" />
     <TypeScriptCompile Include="src\app\utilities\utilities.module.ts" />
