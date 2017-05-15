@@ -2,7 +2,7 @@
   "compileOnSave": false,
   "buildOnSave": false,
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "module": "commonjs",
     "moduleResolution": "node",
     "removeComments": true,
@@ -12,8 +12,11 @@
     "typeRoots": [ "node_modules/@types" ],
     "types": [
       "angular",
-      "angular-route",      
-      "node"
+      "angular-mocks",
+      "angular-route", 
+      "jasmine",
+      "node",
+      "protractor"
     ]
   },
   "filesGlob": [

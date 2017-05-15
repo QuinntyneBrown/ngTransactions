@@ -1,0 +1,1 @@
+﻿const utilitiesModule = angular.module("ngTransactionsApp.utilities", []);
