@@ -3,7 +3,7 @@
     allScriptsTimeout: 11000,
 
     specs: [
-        'dist/e2e-tests.js'
+        'dist/e2e.js'
     ],
 
     capabilities: {

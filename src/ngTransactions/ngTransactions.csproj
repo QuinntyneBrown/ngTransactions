@@ -75,9 +75,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
-    <Content Include="dist\app.js" />
-    <Content Include="dist\tests.js" />
-    <Content Include="example_spec.js" />
     <Content Include="index.html" />
     <Content Include="karma.conf.js" />
     <Content Include="packages.config" />
@@ -128,8 +125,8 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="conf.js" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
+    <TypeScriptCompile Include="src\app\pages\base.page-model.ts" />
     <TypeScriptCompile Include="src\app\shared\file-upload.component.spec.ts">
       <SubType>Code</SubType>
       <DependentUpon>file-upload.component.ts</DependentUpon>
@@ -139,17 +136,20 @@
       <DependentUpon>header.component.ts</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\shared\shared.module.ts" />
+    <TypeScriptCompile Include="src\app\transactions\transaction-file-upload.component.e2e.ts">
+      <DependentUpon>transaction-file-upload.component.ts</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\transactions\transaction-file-upload.component.spec.ts">
       <SubType>Code</SubType>
       <DependentUpon>transaction-file-upload.component.ts</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\transactions\transaction-file-upload.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\transaction-file-upload.page-model.ts" />
     <TypeScriptCompile Include="src\app\transactions\transaction.d.ts" />
     <TypeScriptCompile Include="src\app\transactions\transaction.service.spec.ts">
       <DependentUpon>transactions.service.ts</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="src\app\transactions\transactions.component.e2e-spec.ts">
-      <SubType>Code</SubType>
+    <TypeScriptCompile Include="src\app\transactions\transactions.component.e2e.ts">
       <DependentUpon>transactions.component.ts</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\transactions\transactions.component.spec.ts">
@@ -158,6 +158,7 @@
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\transactions\transactions.component.ts" />
     <TypeScriptCompile Include="src\app\transactions\transactions.module.ts" />
+    <TypeScriptCompile Include="src\app\pages\transactions.page-model.ts" />
     <TypeScriptCompile Include="src\app\transactions\transactions.service.ts" />
     <TypeScriptCompile Include="src\app\utilities\create-mock-xhr.ts">
       <SubType>Code</SubType>
@@ -166,11 +167,12 @@
     <TypeScriptCompile Include="src\app\utilities\create-xhr.ts" />
     <TypeScriptCompile Include="src\app\utilities\load-style.ts" />
     <TypeScriptCompile Include="src\app\utilities\utilities.module.ts" />
-    <TypeScriptCompile Include="src\e2e-tests.ts" />
+    <TypeScriptCompile Include="src\e2e.ts" />
     <TypeScriptCompile Include="src\main.ts" />
     <TypeScriptCompile Include="src\app\shared\header.component.ts" />
     <TypeScriptCompile Include="src\app\shared\file-upload.component.ts" />
     <TypeScriptCompile Include="src\tests.ts" />
+    <TypeScriptCompile Include="src\app\pages\index.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

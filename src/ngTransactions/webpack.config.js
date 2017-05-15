@@ -7,7 +7,7 @@ module.exports = {
     entry: {
         'app': './src/main',
         'tests': './src/tests',
-        'e2e-tests': './src/e2e-tests'
+        'e2e': './src/e2e'
     },
     output: {
         path: __dirname + "/dist",

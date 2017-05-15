@@ -175,7 +175,7 @@
     <Compile Include="Features\Transactions\UploadHandlers\StreamHelper.cs" />
     <Compile Include="Data\Migrations\Configuration.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="Features\Transactions\TransactionController.cs" />
+    <Compile Include="Features\Transactions\TransactionsController.cs" />
     <Compile Include="Features\Transactions\UploadTransactionsCommand.cs" />
     <Compile Include="Data\Model\Transaction.cs" />
     <Compile Include="Data\Model\Batch.cs" />
