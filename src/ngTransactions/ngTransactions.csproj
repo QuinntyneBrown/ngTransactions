@@ -77,9 +77,11 @@
     <Content Include=".gitignore" />
     <Content Include="dist\app.js" />
     <Content Include="dist\tests.js" />
+    <Content Include="example_spec.js" />
     <Content Include="index.html" />
     <Content Include="karma.conf.js" />
     <Content Include="packages.config" />
+    <Content Include="protractor.conf.js" />
     <Content Include="src\app\app.scss">
       <DependentUpon>app.module.ts</DependentUpon>
     </Content>
@@ -126,7 +128,7 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="protractor.conf.ts" />
+    <Content Include="conf.js" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
     <TypeScriptCompile Include="src\app\shared\file-upload.component.spec.ts">
       <SubType>Code</SubType>

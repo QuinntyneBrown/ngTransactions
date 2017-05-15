@@ -14,8 +14,9 @@
       "angular",
       "angular-mocks",
       "angular-route", 
-      "jasmine",     
-      "node"
+      "jasmine",
+      "node",
+      "protractor"
     ]
   },
   "filesGlob": [
