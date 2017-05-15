@@ -126,6 +126,7 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="protractor.conf.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
     <TypeScriptCompile Include="src\app\shared\file-upload.component.spec.ts">
       <SubType>Code</SubType>
@@ -145,6 +146,10 @@
     <TypeScriptCompile Include="src\app\transactions\transaction.service.spec.ts">
       <DependentUpon>transactions.service.ts</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\transactions\transactions.component.e2e-spec.ts">
+      <SubType>Code</SubType>
+      <DependentUpon>transactions.component.ts</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\transactions\transactions.component.spec.ts">
       <SubType>Code</SubType>
       <DependentUpon>transactions.component.ts</DependentUpon>
@@ -159,6 +164,7 @@
     <TypeScriptCompile Include="src\app\utilities\create-xhr.ts" />
     <TypeScriptCompile Include="src\app\utilities\load-style.ts" />
     <TypeScriptCompile Include="src\app\utilities\utilities.module.ts" />
+    <TypeScriptCompile Include="src\e2e-tests.ts" />
     <TypeScriptCompile Include="src\main.ts" />
     <TypeScriptCompile Include="src\app\shared\header.component.ts" />
     <TypeScriptCompile Include="src\app\shared\file-upload.component.ts" />

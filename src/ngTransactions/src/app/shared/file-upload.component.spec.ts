@@ -46,4 +46,26 @@ describe("file upload component", () => {
         expect(preventDefaultCalled).toBeTruthy();
         expect(stopPropagationCalled).toBeTruthy();
     });
+
+    it("should stop propagation and prevent default in the event of drop", () => {
+        template = "<ce-file-upload></ce-file-upload>";
+        let stopPropagationCalled = false;
+        let preventDefaultCalled = false;
+        let dropZoneElement = element[0].querySelector(".drop-zone");
+        let dropEvent = new Event('drop') as any;
+
+        dropEvent.stopPropagation = () => stopPropagationCalled = true;
+        dropEvent.preventDefault = () => preventDefaultCalled = true;
+
+        element = $compile(template)($rootScope.$new());
+
+        dropEvent.dataTransfer = {
+            files: []
+        };
+
+        dropZoneElement.dispatchEvent(dropEvent);
+
+        expect(preventDefaultCalled).toBeTruthy();
+        expect(stopPropagationCalled).toBeTruthy();
+    });
 });

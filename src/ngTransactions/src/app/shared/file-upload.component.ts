@@ -13,7 +13,7 @@ class FileUploadComponent implements angular.IComponentController {
             dragEvent.stopPropagation();
             dragEvent.preventDefault();
             if (dragEvent.dataTransfer && dragEvent.dataTransfer.files) {
-                let packageFiles = function (fileList: FileList) {
+                let packageFiles = function (fileList: FileList) {                    
                     let formData = new FormData();
                     for (let i = 0; i < fileList.length; i++) {
                         formData.append(fileList[i].name, fileList[i]);
