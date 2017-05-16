@@ -5,6 +5,7 @@ const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 module.exports = {
     devtool: 'source-map',
     entry: {
+        'vendor': ['./src/polyfills', './src/vendor'],
         'app': './src/main'
     },
     output: {

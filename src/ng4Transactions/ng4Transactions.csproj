@@ -73,8 +73,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="index.html" />
-    <Content Include="packages.config" />
     <Content Include="package.json" />
     <Content Include="src\app\app.component.html">
       <DependentUpon>app.component.ts</DependentUpon>
@@ -106,6 +104,7 @@
     <Content Include="src\app\transactions\transactions.component.scss">
       <DependentUpon>transactions.component.ts</DependentUpon>
     </Content>
+    <Content Include="index.html" />
     <Content Include="tsconfig.json" />
     <Content Include="src\styles\base\_all.scss" />
     <Content Include="src\styles\base\_grid-settings.scss" />
@@ -123,6 +122,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="src\app\app.component.ts" />
+    <TypeScriptCompile Include="src\app\app.module.ts" />
+    <TypeScriptCompile Include="src\app\app.routing.ts" />
+    <TypeScriptCompile Include="src\app\environment.ts" />
+    <TypeScriptCompile Include="src\app\shared\file-upload.component.ts" />
+    <TypeScriptCompile Include="src\app\shared\header.component.ts" />
+    <TypeScriptCompile Include="src\app\shared\index.ts" />
+    <TypeScriptCompile Include="src\app\shared\shared.module.ts" />
+    <TypeScriptCompile Include="src\app\transactions\index.ts" />
+    <TypeScriptCompile Include="src\app\transactions\transaction-file-upload.component.ts" />
+    <TypeScriptCompile Include="src\app\transactions\transactions.component.ts" />
+    <TypeScriptCompile Include="src\app\transactions\transactions.module.ts" />
+    <TypeScriptCompile Include="src\app\transactions\transactions.service.ts" />
+    <TypeScriptCompile Include="src\app\utilities\create-xhr.ts" />
+    <TypeScriptCompile Include="src\main.ts" />
+    <TypeScriptCompile Include="src\polyfills.ts" />
+    <TypeScriptCompile Include="src\vendor.ts" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
@@ -164,24 +182,5 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  <ItemGroup>
-    <TypeScriptCompile Include="src\app\app.module.ts" />
-    <TypeScriptCompile Include="src\app\app.routing.ts" />
-    <TypeScriptCompile Include="src\app\environment.ts" />
-    <TypeScriptCompile Include="src\app\transactions\transactions.component.ts" />
-    <TypeScriptCompile Include="src\app\transactions\transaction-file-upload.component.ts" />
-    <TypeScriptCompile Include="src\app\shared\header.component.ts" />
-    <TypeScriptCompile Include="src\app\shared\file-upload.component.ts" />
-    <TypeScriptCompile Include="src\app\shared\index.ts" />
-    <TypeScriptCompile Include="src\app\transactions\index.ts" />
-    <TypeScriptCompile Include="src\app\utilities\create-xhr.ts" />
-    <TypeScriptCompile Include="src\main.ts" />
-    <TypeScriptCompile Include="src\polyfills.ts" />
-    <TypeScriptCompile Include="src\vendor.ts" />
-    <TypeScriptCompile Include="src\app\app.component.ts" />
-    <TypeScriptCompile Include="src\app\shared\shared.module.ts" />
-    <TypeScriptCompile Include="src\app\transactions\transactions.module.ts" />
-    <TypeScriptCompile Include="src\app\transactions\transactions.service.ts" />
-  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
 </Project>
