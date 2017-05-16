@@ -1,0 +1,26 @@
+{
+  "name": "ng4-transactions",
+  "version": "1.0.0-alpha.0",
+  "description": "Angular 4 version",
+  "main": "index.html",
+  "private": true,
+  "scripts": {},
+  "author": "Quinntyne Brown",
+  "license": "MIT",
+  "dependencies": {
+    "@angular/common": "^4.1.2",
+    "@angular/compiler": "^4.1.2",
+    "@angular/core": "^4.1.2",
+    "@angular/forms": "^4.1.2",
+    "@angular/platform-browser": "^4.1.2",
+    "@angular/router": "^4.1.2",
+    "core-js": "^2.4.1",
+    "rxjs": "^5.4.0",
+    "zone.js": "^0.8.10"
+  },
+  "devDependencies": {
+    "@types/node": "^7.0.18",
+    "typescript": "^2.3.2",
+    "webpack": "^2.5.1"
+  }
+}

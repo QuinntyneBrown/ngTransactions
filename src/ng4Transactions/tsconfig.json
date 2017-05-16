@@ -1,0 +1,27 @@
+{
+  "compileOnSave": false,
+  "buildOnSave": false,
+  "compilerOptions": {
+    "allowJs": true,
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "typeRoots": [ "node_modules/@types" ],
+    "types": [
+      "node"
+    ]
+  },
+  "filesGlob": [
+    "./src/**/*.ts",
+    "src/custom-typings.d.ts",
+    "typings/index.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
