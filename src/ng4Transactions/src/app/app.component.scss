@@ -1,5 +1,23 @@
 @import "../styles/base/all";
 
+body, html {
+    font-family:sans-serif;
+    margin:0;
+    padding:0;
+}
+
+router-outlet {
+    display:block;
+    margin: 0 20px;
+    max-width:580px;
+}
+
+@media (min-width: $screen-sm-min) { 
+    router-outlet {
+        margin: 0 auto;
+    }
+}
+
 @media only screen and (min-width: $screen-sm-min) { 
 
 

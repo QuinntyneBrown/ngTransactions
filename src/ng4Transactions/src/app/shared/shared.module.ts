@@ -9,6 +9,9 @@ const declarables = [HeaderComponent, FileUploadComponent];
 @NgModule({
     imports: [CommonModule],
     exports: [declarables],
-    declarations: [declarables]
+    declarations: [declarables],
+    providers: [
+        { provide: "createXHR", useValue: () => new XMLHttpRequest() }
+    ]
 })
 export class SharedModule { }

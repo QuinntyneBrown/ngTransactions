@@ -1,4 +1,7 @@
-import { Component, ChangeDetectionStrategy, Input, OnInit } from "@angular/core";
+/// <reference path="transactions.d.ts" />
+
+import { Component, OnInit } from "@angular/core";
+import { TransactionsService } from "./transactions.service";
 
 @Component({
     template: require("./transactions.component.html"),
@@ -6,7 +9,17 @@ import { Component, ChangeDetectionStrategy, Input, OnInit } from "@angular/core
     selector: "ce-transactions"
 })
 export class TransactionsComponent implements OnInit { 
-    ngOnInit() {
+    constructor(private _transactionsService: TransactionsService) { }
 
+    ngOnInit() {
+        this._transactionsService
+            .get()
+            .subscribe(results => {
+                this.transactions = results.transactionSummaryItems;
+            });
     }
+
+    public transactions: Array<Transaction> = [];
+
+    public filterInput: string = "";
 }

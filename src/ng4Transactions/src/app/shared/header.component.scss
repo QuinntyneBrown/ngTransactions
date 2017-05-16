@@ -1,16 +1,40 @@
 @import "../../styles/base/all";
 
-@media only screen and (min-width: $screen-sm-min) { 
+:host {
+    display:block;
+    height:60px;
 
+    background: linear-gradient(90deg, rgb(89,89,89) 0%, rgb(200,200,200) 100%);
+    
+    a {
+        cursor:pointer;
+        text-decoration:none;
+        color:#fff;
+        padding: 0 15px;
+        text-transform:uppercase;
+        line-height:60px;
+        display:inline-block;        
+    }
 
-}
+    a.active {
+        background: linear-gradient(90deg, rgb(89,89,89) 0%, rgb(125,125,125) 100%);
+        font-weight:600;
+    }
 
-@media only screen and (min-width: $screen-md-min) { 
+    a:hover {
+        background-color:#666;
+    }
 
+    .container {
+        margin: 0 20px;
+        max-width:580px;
+        text-align:center;
+        padding:0;
+    }
 
-}
-
-@media only screen and (min-width: $screen-lg-min) { 
-
-
+    @media (min-width: $screen-md-min) { 
+        .container {
+            margin: 0 auto;
+        }
+    }
 }

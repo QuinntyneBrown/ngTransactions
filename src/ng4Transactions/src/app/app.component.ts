@@ -3,6 +3,7 @@ import { Component, ChangeDetectionStrategy, Input, OnInit, ViewEncapsulation } 
 @Component({
     template: require("./app.component.html"),
     styles: [require("./app.component.scss")],
-    selector: "ce-app"
+    selector: "ce-app",
+    encapsulation:ViewEncapsulation.None
 })
 export class AppComponent { }

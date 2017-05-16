@@ -132,6 +132,7 @@
     <TypeScriptCompile Include="src\app\transactions\index.ts" />
     <TypeScriptCompile Include="src\app\transactions\transaction-file-upload.component.ts" />
     <TypeScriptCompile Include="src\app\transactions\transactions.component.ts" />
+    <TypeScriptCompile Include="src\app\transactions\transactions.d.ts" />
     <TypeScriptCompile Include="src\app\transactions\transactions.module.ts" />
     <TypeScriptCompile Include="src\app\transactions\transactions.service.ts" />
     <TypeScriptCompile Include="src\app\utilities\create-xhr.ts" />

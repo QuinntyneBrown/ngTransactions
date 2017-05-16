@@ -1,0 +1,14 @@
+<h1>Spend</h1>
+
+<div class="filter-container">
+    <input type="text" placeholder="Filter by category">
+</div>
+
+<div *ngFor="let transaction of transactions" class="transaction">    
+    <span class="category">
+        {{ transaction.category }}
+    </span>
+    <span class="spend">
+        {{ transaction.spend }}
+    </span>
+</div>

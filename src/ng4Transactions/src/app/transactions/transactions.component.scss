@@ -1,5 +1,43 @@
 @import "../../styles/base/all";
 
+:host {
+    text-transform:uppercase;
+    
+    h1 {
+        text-align:center;
+    }
+
+    .filter-container {
+        margin:0 0 20px 0;
+    }
+
+    .transaction {
+        line-height:1.85em;
+    }
+
+    .category,
+    .spend {
+        display:inline-block;
+        letter-spacing:0.025em;
+        text-transform:uppercase;
+        text-align:right;
+        width:100px;
+    }
+    .category {        
+        width:calc(100% - 105px);
+        text-align:left;
+    }
+
+    input {
+        width: calc(100% - 20px);
+        line-height:3em;
+        padding: 0 10px;
+        border-radius: 0;
+        -webkit-appearance: none;
+        border:solid 1px #ddd;        
+    }
+}
+
 @media only screen and (min-width: $screen-sm-min) { 
 
 
