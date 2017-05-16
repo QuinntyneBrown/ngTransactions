@@ -5,6 +5,11 @@ export const routes: Routes = [
     {
         path: '',
         pathMatch: 'full',
+        redirectTo: 'spend'
+    },
+    {
+        path: 'spend',
+        pathMatch: 'full',
         component: TransactionsComponent
     },
     {
