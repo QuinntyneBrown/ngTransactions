@@ -1,5 +1,4 @@
 /// <reference path="transactions.d.ts" />
-
 import { Component, OnInit } from "@angular/core";
 import { TransactionsService } from "./transactions.service";
 
@@ -14,12 +13,13 @@ export class TransactionsComponent implements OnInit {
     ngOnInit() {
         this._transactionsService
             .get()
-            .subscribe(results => {
-                this.transactions = results.transactionSummaryItems;
-            });
+            .subscribe(results => this.transactions = results.transactionSummaryItems);
     }
 
-    public transactions: Array<Transaction> = [];
+    public filter(value:string) {
+        this.filterTerm = value;
+    }
+    public transactions: Array<Transaction> = [];  
 
-    public filterInput: string = "";
+    public filterTerm: string = "";  
 }

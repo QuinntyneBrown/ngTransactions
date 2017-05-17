@@ -1,10 +1,10 @@
 <h1>Spend</h1>
 
 <div class="filter-container">
-    <input type="text" placeholder="Filter by category">
+    <input type="text" #filterBox id="filter-box" (keyup)="filter(filterBox.value)" placeholder="Filter by category" />
 </div>
 
-<div *ngFor="let transaction of transactions" class="transaction">    
+<div *ngFor="let transaction of transactions | textFilter: filterTerm" class="transaction">    
     <span class="category">
         {{ transaction.category }}
     </span>

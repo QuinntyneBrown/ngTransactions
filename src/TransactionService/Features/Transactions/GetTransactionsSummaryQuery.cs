@@ -2,8 +2,8 @@ using MediatR;
 using System.Threading.Tasks;
 using System.Linq;
 using System.Data.Entity;
-using TransactionService.Data;
 using System.Collections.Generic;
+using TransactionService.Data;
 
 namespace TransactionService.Features.Transactions
 {
