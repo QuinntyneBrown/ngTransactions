@@ -16,9 +16,8 @@ export class TransactionsComponent implements OnInit {
             .subscribe(results => this.transactions = results.transactionSummaryItems);
     }
 
-    public filter(value:string) {
-        this.filterTerm = value;
-    }
+    public filter(value: string) { this.filterTerm = value; }
+
     public transactions: Array<Transaction> = [];  
 
     public filterTerm: string = "";  
