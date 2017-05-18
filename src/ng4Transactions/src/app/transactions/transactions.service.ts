@@ -18,5 +18,4 @@ export class TransactionsService {
     }
 
     public get _baseUrl() { return "http://transaction-service.azurewebsites.net/api/"; }
-
 }

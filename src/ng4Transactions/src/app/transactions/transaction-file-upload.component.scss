@@ -1,5 +1,22 @@
 @import "../../styles/base/all";
 
+:host {
+    text-align:center;
+    display:inline-block;
+    width:100%;
+    margin:0 auto;
+
+    ce-file-upload {
+        display:inline-block;
+        margin:0 auto;
+        width:100%;
+
+        .drop-zone {
+            margin: 0 auto;
+        }
+    }
+}
+
 @media only screen and (min-width: $screen-sm-min) { 
 
 

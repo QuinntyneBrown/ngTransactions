@@ -4,11 +4,13 @@
     name: 'textFilter'
 })
 export class TextFilterPipe implements PipeTransform {
-    transform(items: any[], args: any): any {
+    transform(items: any[], args: Object): any {
 
-        if (!items || !args || items.length < 0)
+        if (!items || !args)
             return items;
+
+        const key = Object.keys(args)[0];
         
-        return items.filter(item => item.category.indexOf(args) !== -1);
+        return items.filter(item => item[key].indexOf(args[key]) !== -1);
     }
 }

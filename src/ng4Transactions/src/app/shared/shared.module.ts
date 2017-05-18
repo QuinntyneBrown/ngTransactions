@@ -5,14 +5,11 @@ import { TextFilterPipe } from "./text-filter.pipe";
 import { HeaderComponent } from './header.component';
 import { FileUploadComponent } from './file-upload.component';
 
-const declarables = [HeaderComponent, FileUploadComponent, TextFilterPipe];
+const declarables = [ HeaderComponent, FileUploadComponent, TextFilterPipe ];
 
 @NgModule({
     imports: [CommonModule, RouterModule],
     exports: [declarables],
-    declarations: [declarables],
-    providers: [
-        { provide: "createXHR", useValue: () => new XMLHttpRequest() }
-    ]
+    declarations: [declarables]
 })
 export class SharedModule { }

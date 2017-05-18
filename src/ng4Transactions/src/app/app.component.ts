@@ -1,9 +1,8 @@
-import { Component, ChangeDetectionStrategy, Input, OnInit, ViewEncapsulation } from "@angular/core";
+import { Component } from "@angular/core";
 
 @Component({
     template: require("./app.component.html"),
     styles: [require("./app.component.scss")],
-    selector: "ce-app",
-    encapsulation:ViewEncapsulation.None
+    selector: "ce-app"
 })
 export class AppComponent { }

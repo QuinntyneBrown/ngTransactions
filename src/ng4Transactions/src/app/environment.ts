@@ -2,9 +2,6 @@
 // Different environments can be found in config/environment.{dev|prod}.ts
 // The build system defaults to the dev environment
 
-
-//https://github.com/motdotla/dotenv
-
 export const environment = {
-    production: false
+    production: true
 };
