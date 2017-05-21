@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 import { SharedModule } from "../shared";
@@ -14,7 +15,7 @@ const providers = [
 ];
 
 @NgModule({
-    imports: [CommonModule, RouterModule, SharedModule],
+    imports: [CommonModule, RouterModule, SharedModule, BrowserAnimationsModule],
     exports: [declarables],
     declarations: [declarables],
     providers: providers

@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
+import { trigger, style, animate, transition } from '@angular/animations';
 
 @Component({
     template: require("./transaction-file-upload.component.html"),

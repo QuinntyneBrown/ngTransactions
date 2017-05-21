@@ -10,12 +10,22 @@ export const routes: Routes = [
     {
         path: 'spend',
         pathMatch: 'full',
-        component: TransactionsComponent
+        component: TransactionsComponent,
+        data: {
+            animation: {
+                value: 'spend'
+            }
+        }        
     },
     {
         path: 'upload',
         pathMatch: 'full',
-        component: TransactionFileUploadComponent
+        component: TransactionFileUploadComponent,
+        data: {
+            animation: {
+                value: 'upload'
+            }
+        }
     }
 ];
 

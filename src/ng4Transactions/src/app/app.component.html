@@ -1,5 +1,4 @@
 <ce-header></ce-header>
-<ce-logo></ce-logo>
-<div class="router-outlet-container">
-    <router-outlet></router-outlet>
+<div class="router-outlet-container" [@routerAnimations]="prepareRoute(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
 </div>

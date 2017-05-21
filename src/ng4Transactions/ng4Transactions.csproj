@@ -108,6 +108,8 @@
     <Content Include="tsconfig.json" />
     <Content Include="src\styles\base\_all.scss" />
     <Content Include="src\styles\base\_grid-settings.scss" />
+    <None Include="Properties\PublishProfiles\transaction-service - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\transaction-service - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -140,9 +142,7 @@
     <TypeScriptCompile Include="src\polyfills.ts" />
     <TypeScriptCompile Include="src\vendor.ts" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

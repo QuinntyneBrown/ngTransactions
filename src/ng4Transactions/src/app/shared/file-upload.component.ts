@@ -1,4 +1,5 @@
 import { Component, OnInit, ElementRef, Inject, EventEmitter, Output } from "@angular/core";
+import { Http } from "@angular/http";
 
 @Component({
     template: require("./file-upload.component.html"),
@@ -6,7 +7,7 @@ import { Component, OnInit, ElementRef, Inject, EventEmitter, Output } from "@an
     selector: "ce-file-upload"
 })
 export class FileUploadComponent implements OnInit {
-    constructor(private _elementRef: ElementRef) {}
+    constructor(private _elementRef: ElementRef, private _http: Http) {}
 
     ngOnInit() {
         const dropZoneHTMLElement = this._elementRef.nativeElement.querySelector(".drop-zone") as HTMLElement;
@@ -27,25 +28,13 @@ export class FileUploadComponent implements OnInit {
                     }
                     return formData;
                 }
-
-                let xhr = new XMLHttpRequest();
-                xhr.open("POST", `http://transaction-service.azurewebsites.net/api/transactions/upload`, true);
-                xhr.onload = (e) => {
-                    if (xhr.readyState === 4) {
-                        if (xhr.status === 200) {
-                            this.onUpload.emit();
-                        }
-                        else {
-                            console.error(xhr.statusText);
-                        }
-                    }
-                };
-                xhr.send(packageFiles(dragEvent.dataTransfer.files));
-                return "";
+                this._http
+                    .post("http://transaction-service.azurewebsites.net/api/transactions/upload", packageFiles(dragEvent.dataTransfer.files))
+                    .subscribe(() => this.onUpload.emit());                
             }
         }, false);
     }
-
+    
     @Output()
     public onUpload: EventEmitter<any> = new EventEmitter();
 }

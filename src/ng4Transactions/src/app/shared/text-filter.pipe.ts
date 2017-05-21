@@ -11,6 +11,6 @@ export class TextFilterPipe implements PipeTransform {
 
         const key = Object.keys(args)[0];
         
-        return items.filter(item => item[key].indexOf(args[key]) !== -1);
+        return items.filter(item => item[key].toLowerCase().indexOf(args[key].toLowerCase()) !== -1);
     }
 }

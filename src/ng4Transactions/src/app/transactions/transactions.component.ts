@@ -1,5 +1,5 @@
 /// <reference path="transactions.d.ts" />
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, OnChanges } from "@angular/core";
 import { TransactionsService } from "./transactions.service";
 
 @Component({
