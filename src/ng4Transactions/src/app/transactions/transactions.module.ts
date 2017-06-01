@@ -10,8 +10,7 @@ import { TransactionsService } from "./transactions.service";
 const declarables = [TransactionsComponent, TransactionFileUploadComponent];
 
 const providers = [
-    TransactionsService,
-    { provide: "BASE_URL", useValue: "http://transaction-service.azurewebsites.net/" }
+    TransactionsService
 ];
 
 @NgModule({

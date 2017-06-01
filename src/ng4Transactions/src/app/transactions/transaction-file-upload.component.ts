@@ -1,6 +1,5 @@
-import { Component } from "@angular/core";
-import { Router } from "@angular/router";
-import { trigger, style, animate, transition } from '@angular/animations';
+import {Component} from "@angular/core";
+import {Router} from "@angular/router";
 
 @Component({
     template: require("./transaction-file-upload.component.html"),
@@ -10,5 +9,5 @@ import { trigger, style, animate, transition } from '@angular/animations';
 export class TransactionFileUploadComponent { 
     constructor(public _router: Router) {}
 
-    public redirectToSpendPage() { this._router.navigate(["spend"]); }
+    public redirectToSpendPage() { this._router.navigateByUrl("/spend"); }
 }

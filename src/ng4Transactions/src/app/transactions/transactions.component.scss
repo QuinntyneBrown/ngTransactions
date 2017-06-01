@@ -1,10 +1,22 @@
 @import "../../styles/base/all";
 
 :host {
+
+    *, *:before, *:after {
+        box-sizing:border-box;        
+        margin:0;
+        padding:0;
+    }
+
+    a, a:link, a:visited, a:active {
+        text-decoration: none;
+    }
+
     text-transform:uppercase;
     
     h1 {
         text-align:center;
+        font-family:Montserrat;
     }
 
     .filter-container {
@@ -36,19 +48,4 @@
         -webkit-appearance: none;
         border:solid 1px #ddd;        
     }
-}
-
-@media only screen and (min-width: $screen-sm-min) { 
-
-
-}
-
-@media only screen and (min-width: $screen-md-min) { 
-
-
-}
-
-@media only screen and (min-width: $screen-lg-min) { 
-
-
 }

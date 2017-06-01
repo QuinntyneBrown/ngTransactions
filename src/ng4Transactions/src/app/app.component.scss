@@ -2,14 +2,14 @@
 
 :host {
     .router-outlet-container {
-    display:block;
-    margin: 0 20px;
-    max-width:580px;
-}
-
-@media (min-width: $screen-sm-min) { 
-    .router-outlet-container {
-        margin: 0 auto;
+        display:block;
+        margin: 0 20px;
+        max-width:580px;
     }
-}
+
+    @media (min-width: $screen-sm-min) { 
+        .router-outlet-container {
+            margin: 0 auto;
+        }
+    }
 }
